@@ -96,9 +96,28 @@ function displayBooks(books){
 //  'Harry Potter'.indexOf('dog');  // => -1
 //  A good starting point would be to write a function isMatch that accepts two arguments – the query and a single book –
 //  and returns true if the book is a match, and false otherwise.
+function isMatch(book, query){7
+	var queryLowerCase = query.toLowerCase();
+	var bookToQueryLength = book.substr(0, query.length);
+	var searchedWord = bookToQueryLength.toLowerCase(); 
 
+		if(queryLowerCase === searchedWord){
+			return true;
+		} 
+		return false ;
+	}
+
+function searchBooks(books ,query){
+	for (var i = 0 ; i < books.length ; i++){
+         if (isMatch(books[i].title || books[i].author || books[i].price , query)){
+             return books[i];
+         }
+	}
+}
 // 8.Write a function removeBook that, given a book's title and an array of books, returns a new array of books that does not contain the book with the provided title.
-
+function removeBook(title, books){
+	
+}
 // ~~~~~~~~~~~~~~~~~~~~~~ More Practice ~~~~~~~~~~~~~~~~~~~~~~
 
 // 1.As we did before, think about what kinds of aspects of movies you would like to represent. A few ideas are: Title ,Director ,Duration ,Release Date ,Actors/Actresses ,Studio(s) ,Synopsis ,Rating
